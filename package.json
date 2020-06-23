@@ -7,8 +7,8 @@
     "dist/"
   ],
   "scripts": {
-    "prepack": "tsc && copyfiles ./src/**/*.html dist/ --up=1",
-    "build": "npm run prepack",
+    "prepare": "tsc && copyfiles ./src/**/*.html dist/ --up=1",
+    "build": "npm run prepare",
     "build:ci": "npm pack --unsafe-perm",
     "test": "mocha -r ts-node/register \"**/*.spec.ts\"",
     "start": "ts-node src/index.ts"

@@ -4,10 +4,6 @@ Given an object input, when this node is executed it will transform its properti
 
 ## Install
 
-> Note: Once public, as with other Node-RED packages this package will be installable through the Node-RED UI. Until then, be sure you follow the [developer instructions](https://gitlab.com/tmobile/iot-mobile/kit/-/blob/tmo/master/developers.md) **before** you try to install any private T-Mobile NPM packages.
-
-<!-- TODO: Once package is public, update instructions -->
-
 ```
 cd ~/.node-red
 npm install --save node-red-contrib-object-to-array

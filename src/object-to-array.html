@@ -1,0 +1,80 @@
+<script type="text/javascript">
+  RED.nodes.registerType("object-to-array", {
+    category: "function",
+    color: "#3FADB5",
+    defaults: {
+      name: { value: "" },
+      input: {
+        value: "payload",
+        validate: RED.validators.typedInput("inputType"),
+      },
+      inputType: { value: "msg" },
+      outputType: { value: "msg" },
+      output: { value: "payload" },
+      key: { value: "key" },
+      value: { value: "value" },
+    },
+    icon: "font-awesome/fa-th-list",
+    inputs: 1,
+    outputs: 1,
+    paletteLabel: "Object to Array",
+    label: function () {
+      return (this.name || "Object to array " + this.input);
+    },
+    oneditprepare: function () {
+      // For examples, see https://github.com/node-red/node-red/blob/master/packages/node_modules/%40node-red/nodes/core/common/20-inject.html
+      $("#node-input-inputType").val(this.inputType);
+      $("#node-input-input").typedInput({
+        default: this.inputType || "msg",
+        typeField: $("#node-input-inputType"),
+        types: ["msg", "flow", "global"],
+      });
+      $("#node-input-input").typedInput("type", this.inputType);
+
+      $("#node-input-outputType").val(this.outputType);
+      $("#node-input-output").typedInput({
+        default: "msg",
+        typeField: $("#node-input-outputType"),
+        types: ["msg"],
+      });
+      $("#node-input-output").typedInput("type", this.outputType);
+      $("#node-input-key").val(this.key);
+      $("#node-input-value").val(this.value);
+    },
+    oneditsave: function () {
+      this.inputType = $("#node-input-input").typedInput("type");
+      this.outputType = $("#node-input-output").typedInput("type");
+      this.key = $("#node-input-key").val();
+      this.value = $("#node-input-value").val();
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="object-to-array">
+  <div class="form-row">
+    <label for="node-input-input"><i class="fa fa-envelope"></i> Input <span data-i18n="common.label.input"></span></label>
+    <input type="text" id="node-input-input" style="width:70%">
+    <input type="hidden" id="node-input-inputType">
+  </div>
+  <div class="form-row">
+    <label for="node-input-output">Output <i class="fa fa-envelope"></i></label>
+    <input type="text" id="node-input-output" style="width:70%">
+    <input type="hidden" id="node-input-outputType">
+  </div>
+  <div class="form-row">
+    <label for="node-input-key"><i class="icon-tag"></i> Key Name</label>
+    <input type="text" id="node-input-key" placeholder="key">
+  </div>
+  <div class="form-row">
+    <label for="node-input-value"><i class="icon-tag"></i> Value Name</label>
+    <input type="text" id="node-input-value" placeholder="value">
+  </div>
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="object-to-array">
+  <p>Given an object input, when this node is executed it will transform its properties to an array of objects with specified key/value properties to the succeeding connected node(s).</p>
+</script>

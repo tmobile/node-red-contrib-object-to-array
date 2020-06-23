@@ -1,0 +1,62 @@
+[
+    {
+        "id": "dae2b249.016b2",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d48d4829.0e1638",
+        "type": "object-to-array",
+        "z": "dae2b249.016b2",
+        "name": "",
+        "input": "payload",
+        "inputType": "msg",
+        "outputType": "msg",
+        "output": "payload",
+        "key": "",
+        "value": "",
+        "x": 310,
+        "y": 120,
+        "wires": [
+            [
+                "1e6f2412.80941c"
+            ]
+        ]
+    },
+    {
+        "id": "c8122f56.383c4",
+        "type": "inject",
+        "z": "dae2b249.016b2",
+        "name": "",
+        "topic": "",
+        "payload": "{\"apple\": 1, \"banana\": 2}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "d48d4829.0e1638"
+            ]
+        ]
+    },
+    {
+        "id": "1e6f2412.80941c",
+        "type": "debug",
+        "z": "dae2b249.016b2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 530,
+        "y": 120,
+        "wires": []
+    }
+]

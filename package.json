@@ -1,7 +1,7 @@
 {
-  "name": "node-red-contrib-object-to-array",
+  "name": "@tmus/node-red-contrib-object-to-array",
   "version": "0.0.1",
-  "description": "",
+  "description": "Given an object input, when this node is executed it will transform its properties to an array of objects with specified key/value properties to the succeeding connected node(s).",
   "main": "dist/index.js",
   "files": [
     "dist/"
@@ -22,7 +22,7 @@
     "Object to Array",
     "IoT-Mobile"
   ],
-  "author": "Joe Bond, @jbondpk",
+  "author": "T-Mobile",
   "license": "Apache-2.0",
   "node-red": {
     "nodes": {
@@ -42,5 +42,8 @@
     "ts-node": "^8.8.2",
     "typescript": "^3.9.5"
   },
-  "publishConfig": {}
+  "bugs": {
+    "url": "https://github.com/tmobile/node-red-contrib-object-to-array/issues"
+  },
+  "homepage": "https://github.com/tmobile/node-red-contrib-object-to-array"
 }
